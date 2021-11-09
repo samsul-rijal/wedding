@@ -6,11 +6,11 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Wedding &mdash; Suhendi</title>
+	<title>Wedding &mdash; Samsul Rijal</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
-	<meta name="author" content="FREEHTML5.CO" />
+	<meta name="description" content="Web Undangan Nikah Samsul Rijal" />
+	<meta name="keywords" content="Web Undangan Nikah Samsul Rijal" />
+	<meta name="author" content="Samsul Rijal" />
 
   	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>
@@ -29,7 +29,6 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
-
 
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="{{ asset('frontend/css/animate.css') }}">
@@ -71,7 +70,7 @@
 				<div class="col-xs-2">
 					<div id="fh5co-logo"><a href="index.html">Wedding<strong>.</strong></a></div>
 				</div>
-				<div class="col-xs-10 text-right menu-1">
+				<!-- <div class="col-xs-10 text-right menu-1">
 					<ul>
 						<li class="active"><a href="index.html">Home</a></li>
 						<li><a href="about.html">Story</a></li>
@@ -95,7 +94,7 @@
 						</li>
 						<li><a href="contact.html">Contact</a></li>
 					</ul>
-				</div>
+				</div> -->
 			</div>
 			
 		</div>
@@ -277,127 +276,57 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-					<span>Our Memories</span>
-					<h2>Wedding Gallery</h2>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+					<h2>Galeri Foto</h2>
+					<p>Foto-foto kebahagian kami yang kami kenang selalu.</p>
 				</div>
 			</div>
 			<div class="row row-bottom-padded-md">
 				<div class="col-md-12">
 					<ul id="fh5co-gallery-list">
-						
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-1.jpg); "> 
-						<a href="{{ asset('frontend/images/gallery-1.jpg') }}">
-						
-							<div class="case-studies-summary">
-								<span>14 Photos</span>
-								<h2>Two Glas of Juice</h2>
-							</div>
-						</a>
-					</li>
-					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-2.jpg); ">
-						<a href="#" class="color-2">
-							<div class="case-studies-summary">
-								<span>30 Photos</span>
-								<h2>Timer starts now!</h2>
-							</div>
-						</a>
-					</li>
-
-
-					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-3.jpg); ">
-						<a href="#" class="color-3">
-							<div class="case-studies-summary">
-								<span>90 Photos</span>
-								<h2>Beautiful sunset</h2>
-							</div>
-						</a>
-					</li>
-					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-4.jpg); ">
-						<a href="#" class="color-4">
-							<div class="case-studies-summary">
-								<span>12 Photos</span>
-								<h2>Company's Conference Room</h2>
-							</div>
-						</a>
-					</li>
-
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-5.jpg); ">
-							<a href="#" class="color-3">
+						@foreach ($galeri_foto as $result)
+						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url({{ asset($result->gambar) }}); ">
+							<a class="color-6">
 								<div class="case-studies-summary">
-									<span>50 Photos</span>
-									<h2>Useful baskets</h2>
+									<h2>{{ $result->keterangan }}</h2>
 								</div>
 							</a>
 						</li>
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-6.jpg); ">
-							<a href="#" class="color-4">
-								<div class="case-studies-summary">
-									<span>45 Photos</span>
-									<h2>Skater man in the road</h2>
-								</div>
-							</a>
-						</li>
-
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-7.jpg); ">
-							<a href="#" class="color-4">
-								<div class="case-studies-summary">
-									<span>35 Photos</span>
-									<h2>Two Glas of Juice</h2>
-								</div>
-							</a>
-						</li>
-
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-8.jpg); "> 
-							<a href="#" class="color-5">
-								<div class="case-studies-summary">
-									<span>90 Photos</span>
-									<h2>Timer starts now!</h2>
-								</div>
-							</a>
-						</li>
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-9.jpg); ">
-							<a href="#" class="color-6">
-								<div class="case-studies-summary">
-									<span>56 Photos</span>
-									<h2>Beautiful sunset</h2>
-								</div>
-							</a>
-						</li>
+						@endforeach
 					</ul>		
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div id="fh5co-services" class="fh5co-section-gray">
+	<!-- <div id="fh5co-services" class="fh5co-section-gray">
 		<div class="container">
 			
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>We Offer Services</h2>
+					<h2>Video Galeri</h2>
 					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
 				</div>
 			</div>
 
 			<div class="row">
-				<div class="col-md-6 animate-box">
+				<div class="col-md-12 animate-box">
 					<div class="fh5co-video fh5co-bg" style="background-image: url(images/img_bg_3.jpg); ">
-						<a href="https://vimeo.com/channels/staffpicks/93951774" class="popup-vimeo"><i class="icon-video2"></i></a>
+						<a href="https://youtu.be/_aI9zLLKf_U" class="popup-vimeo"><i class="icon-video2"></i></a>
 						<div class="overlay"></div>
 					</div>
 				</div>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/_aI9zLLKf_U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/_aI9zLLKf_U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<div id="fh5co-testimonial">
 		<div class="container">
 			<div class="row">
 				<div class="row animate-box">
 					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-						<span>Best Wishes</span>
-						<h2>Friends Wishes</h2>
+						<h2>Doa dan Ucapan</h2>
 					</div>
 				</div>
 				<div class="row">
@@ -450,33 +379,72 @@
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Are You Attending?</h2>
-					<p>Please Fill-up the form to notify you that you're attending. Thanks.</p>
+					<h2>Kirim doa dan Ucapan</h2>
+					<p>Tuliskan sesuatu ucapan berupa harapan ataupun doa untuk kedua mempelai.</p>
 				</div>
 			</div>
 			<div class="row animate-box">
 				<div class="col-md-10 col-md-offset-1">
-					<form class="form-inline">
-						<div class="col-md-4 col-sm-4">
-							<div class="form-group">
-								<label for="name" class="sr-only">Name</label>
-								<input type="name" class="form-control" id="name" placeholder="Name">
+					<form action="https://thewedding-suhendi-erlis.webnikah.com" method="POST" autocomplete="off" class="form wow fadeIn"> 
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="text" id="nama" class="form-control" name="nama" placeholder="Tulis nama lengkap anda" required="required">
+								</div>
 							</div>
-						</div>
-						<div class="col-md-4 col-sm-4">
-							<div class="form-group">
-								<label for="email" class="sr-only">Email</label>
-								<input type="email" class="form-control" id="email" placeholder="Email">
+
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="text" name="alamat" class="form-control" placeholder="Tulis alamat tinggal anda (optional)" >
+								</div>
 							</div>
-						</div>
-						<div class="col-md-4 col-sm-4">
-							<button type="submit" class="btn btn-default btn-block">I am Attending</button>
-						</div>
-					</form>
+					
+							<div class="col-md-12">
+								<div class="form-group">
+									<textarea id="doa" name="doa" class="form-control"  cols="30" rows="10"  placeholder="Tuliskan ucapan atau doa untuk kedua mempelai" required="required"></textarea>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<!-- <input type="file" name="gambar" class="form-control" > -->
+									<label for="formFile" class="form-label" style="color:#fff">Upload moment dengan mempelai</label>
+									<input class="form-control" type="file" id="formFile">
+								</div>
+							</div>
+							
+								
+							<div class="col-md-12 text-center">
+								<button class="btn btn-lg btn-primary">Kirim doa dan Ucapan</button>
+								<!-- <input type="submit" id="rsvp-form-submit" class="btn btn-lg btn-primary" value="Kirim doa dan Ucapan"> -->
+							</div>
+              			</div>
+            		</form> 
 				</div>
 			</div>
 		</div>
 	</div>
+	
+
+	<div id="mapss" class="fh5co-section-gray">
+		<div class="container">
+			<div class="row"> 
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box" style="margin-bottom:20px;">
+					<br><h2>Peta Lokasi</h2><span id="maps"></span>
+					<p>Anda dapat menuju lokasi acara kami dengan bantuan peta dibawah ini. Atau anda bisa buka di <strong>
+                    <br><br><a href="https://goo.gl/maps/1g9Y79f1tQrcQBFT8" target="_blank" class="btn btn-primary">Buka di Google Maps</a></strong></p>
+				</div>
+			
+				<div class="col-md-12">
+					<center>
+						<div id="map" class="mapbox">
+							<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7929.9350883672905!2d106.137132!3d-6.398184!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x26de9a5bfb2c4f8c!2sEndi%20Studio!5e0!3m2!1sen!2sid!4v1636486321961!5m2!1sen!2sid" width="330" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>	
+						</div><br><br>
+					</center>
+				</div>
+			</div>
+		</div>
+	</div>
+	
 
 	<footer id="fh5co-footer" role="contentinfo">
 		<div class="container">

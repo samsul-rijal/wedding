@@ -5,6 +5,7 @@ use App\Http\Controllers\MempelaiPriaController;
 use App\Http\Controllers\MempelaiWanitaController;
 use App\Http\Controllers\AkadNikahController;
 use App\Http\Controllers\ResepsiController;
+use App\Http\Controllers\GaleriFotoController;
 use App\Http\Controllers\UndanganController;
 
 /*
@@ -31,6 +32,7 @@ Route::resource('mempelai-pria', MempelaiPriaController::class);
 Route::resource('mempelai-wanita', MempelaiWanitaController::class);
 Route::resource('akad-nikah', AkadNikahController::class);
 Route::resource('resepsi', ResepsiController::class);
+Route::resource('galeri-foto', GAleriFotoController::class);
 
 Auth::routes();
 

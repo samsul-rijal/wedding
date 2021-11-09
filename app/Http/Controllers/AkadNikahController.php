@@ -70,6 +70,7 @@ class AkadNikahController extends Controller
         AkadNikah::whereId($id)->update($akad_nikah_data);
 
         return redirect()->route('akad-nikah.index')->with('success','Data berhasil diupdate');
+    
     }
 
     public function destroy($id)
