@@ -39,7 +39,7 @@
         <li><a class="nav-link" href="blank.html"><i class="fas fa-video"></i> <span>Video</span></a></li>
         <li><a class="nav-link" href="blank.html"><i class="fas fa-cogs"></i> <span>Pengaturan Umum</span></a></li>
         <li><a class="nav-link" href="blank.html"><i class="fas fa-user"></i> <span>User</span></a></li>
-        <li><a class="nav-link" href="{{ route('undangan') }}"><i class="fas fa-eye"></i> <span>Lihat Website</span></a></li>
+        <li><a class="nav-link" href="{{ route('undangan') }}" target="_blank"><i class="fas fa-eye"></i> <span>Lihat Website</span></a></li>
 
   </aside>
 </div>

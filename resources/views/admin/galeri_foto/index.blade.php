@@ -28,7 +28,7 @@
             <article class="article article-style-c">
               <div class="article-header">
                 <div class="article-image">
-                  <img src="{{ asset($result->gambar) }}" class="article-image">
+                  <img src="{{ asset($result->gambar) }}" class="article-image" width="500" height="800">
                 </div>
                 <div class="article-image" data-background="{{ asset($result->gambar) }}">
                 </div>

@@ -24,8 +24,6 @@
             {{ Session('success') }}
             </div>
         </div>
-
-
     @endif
 
     <form action="{{ route('resepsi.store') }}" method="POST">

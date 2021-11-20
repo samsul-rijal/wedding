@@ -52,6 +52,13 @@
 
 	<!-- Modernizr JS -->
 	<script src="{{ asset('frontend/js/modernizr-2.6.2.min.js') }}"></script>
+	<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+
+	<!-- Fancybox -->
+	<link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"
+    />
 
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
@@ -70,7 +77,7 @@
 				<div class="col-xs-2">
 					<div id="fh5co-logo"><a href="index.html">Wedding<strong>.</strong></a></div>
 				</div>
-				<!-- <div class="col-xs-10 text-right menu-1">
+				<div class="col-xs-10 text-right menu-1">
 					<ul>
 						<li class="active"><a href="index.html">Home</a></li>
 						<li><a href="about.html">Story</a></li>
@@ -94,17 +101,18 @@
 						</li>
 						<li><a href="contact.html">Contact</a></li>
 					</ul>
-				</div> -->
+				</div>
 			</div>
 			
 		</div>
 	</nav>
 	<!-- Background awal depan -->
-	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url({{ asset('frontend/images/img_bg_2.jpg') }} );" data-stellar-background-ratio="0.5">
+	<header id="fh5co-header" class="fh5co-cover sam" role="banner" style="background-image:url({{ asset('frontend/images/img_bg_2.jpg') }} );" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center">
+				<!-- <div class="col-md-8 col-md-offset-2 text-center"> -->
+				<div class="text-center">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
 						
@@ -116,9 +124,15 @@
 									<span id="tanggal"></span>
 								</p>
 							</h2>
-							<div class="simply-countdown simply-countdown-one" id="tanggal-countdown" style="font-size:20px; "></div>
-							<p><a href="#couple" class="btn btn-default btn-sm">Save the date</a></p>
-						
+							<div class="simply-countdown simply-countdown-one" id="tanggal-countdown" style="font-size:15px; color: #fff "></div>
+							<!-- <p><a href="#couple" class="btn btn-sm">Save the date</a></p> -->
+							<div class="scroll-down d-flex justify-content-center">
+								<div class="chevron"></div>
+								<div class="chevron"></div>
+								<div class="chevron"></div>
+								<span class="text d-flex justify-content-center">Scroll down</span>
+							</div>
+							<!-- <div class="icon-scroll"></div> -->
 						</div>
 					</div>
 				</div>
@@ -218,60 +232,6 @@
 		</div>
 	</div>
 
-	<!-- <div id="fh5co-couple-story">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-					<span>We Love Each Other</span>
-					<h2>Our Story</h2>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12 col-md-offset-0">
-					<ul class="timeline animate-box">
-						<li class="animate-box">
-							<div class="timeline-badge" style="background-image:url(images/couple-1.jpg);"></div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h3 class="timeline-title">First We Meet</h3>
-									<span class="date">December 25, 2015</span>
-								</div>
-								<div class="timeline-body">
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-								</div>
-							</div>
-						</li>
-						<li class="timeline-inverted animate-box">
-							<div class="timeline-badge" style="background-image:url(images/couple-2.jpg);"></div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h3 class="timeline-title">First Date</h3>
-									<span class="date">December 28, 2015</span>
-								</div>
-								<div class="timeline-body">
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-								</div>
-							</div>
-						</li>
-						<li class="animate-box">
-							<div class="timeline-badge" style="background-image:url(images/couple-3.jpg);"></div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h3 class="timeline-title">In A Relationship</h3>
-									<span class="date">January 1, 2016</span>
-								</div>
-								<div class="timeline-body">
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-								</div>
-							</div>
-						</li>
-			    	</ul>
-				</div>
-			</div>
-		</div>
-	</div> -->
-
 	<div id="fh5co-gallery" class="fh5co-section-gray">
 		<div class="container">
 			<div class="row">
@@ -284,11 +244,20 @@
 				<div class="col-md-12">
 					<ul id="fh5co-gallery-list">
 						@foreach ($galeri_foto as $result)
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url({{ asset($result->gambar) }}); ">
+						<!-- <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url({{ asset($result->gambar) }}); ">
 							<a class="color-6">
 								<div class="case-studies-summary">
 									<h2>{{ $result->keterangan }}</h2>
 								</div>
+							</a>
+						</li> -->
+
+						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url({{ asset($result->gambar) }}); ">
+							<a
+								data-fancybox="gallery"
+								data-src="{{ asset($result->gambar) }}"
+								data-caption="{{ $result->keterangan }}"
+							>
 							</a>
 						</li>
 						@endforeach
@@ -385,7 +354,7 @@
 			</div>
 			<div class="row animate-box">
 				<div class="col-md-10 col-md-offset-1">
-					<form action="https://thewedding-suhendi-erlis.webnikah.com" method="POST" autocomplete="off" class="form wow fadeIn"> 
+					<form action="" method="" autocomplete="off" class="form wow fadeIn"> 
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
@@ -406,15 +375,20 @@
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
-									<!-- <input type="file" name="gambar" class="form-control" > -->
-									<label for="formFile" class="form-label" style="color:#fff">Upload moment dengan mempelai</label>
-									<input class="form-control" type="file" id="formFile">
+									<label for="fileName" class="label" style="color:#fff">Moment dengan mempelai (optional)</label>
+									<div class="file-upload">
+										<div class="file-select">
+											<div class="file-select-button" id="fileName">Choose File</div>
+											<div class="file-select-name" id="noFile">No file chosen...</div> 
+											<input type="file" name="chooseFile" id="chooseFile">
+										</div>
+									</div>
+									
 								</div>
 							</div>
 							
-								
-							<div class="col-md-12 text-center">
-								<button class="btn btn-lg btn-primary">Kirim doa dan Ucapan</button>
+							<div class="col-md-12 text-center mt-4">
+								<button class="btn btn-md btn-primary">Kirim doa dan Ucapan</button>
 								<!-- <input type="submit" id="rsvp-form-submit" class="btn btn-lg btn-primary" value="Kirim doa dan Ucapan"> -->
 							</div>
               			</div>
@@ -434,12 +408,10 @@
                     <br><br><a href="https://goo.gl/maps/1g9Y79f1tQrcQBFT8" target="_blank" class="btn btn-primary">Buka di Google Maps</a></strong></p>
 				</div>
 			
-				<div class="col-md-12">
-					<center>
-						<div id="map" class="mapbox">
-							<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7929.9350883672905!2d106.137132!3d-6.398184!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x26de9a5bfb2c4f8c!2sEndi%20Studio!5e0!3m2!1sen!2sid!4v1636486321961!5m2!1sen!2sid" width="330" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>	
-						</div><br><br>
-					</center>
+				<div class="col-md-12 text-center">
+					<div id="map" class="mapbox">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7929.9350883672905!2d106.137132!3d-6.398184!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x26de9a5bfb2c4f8c!2sEndi%20Studio!5e0!3m2!1sen!2sid!4v1636486321961!5m2!1sen!2sid" width="330" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>	
+					</div><br><br>
 				</div>
 			</div>
 		</div>
@@ -510,23 +482,6 @@
 	<script src="{{ asset('frontend/js/main.js') }}"></script>
 
 	<script>
-		// var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
-
-		// // default example
-		// simplyCountdown('.simply-countdown-one', {
-		// 	year: d.getFullYear(),
-		// 	month: d.getMonth() + 1,
-		// 	day: d.getDate()
-		// });
-
-		// //jQuery example
-		// $('#simply-countdown-losange').simplyCountdown({
-		// 	year: d.getFullYear(),
-		// 	month: d.getMonth() + 1,
-		// 	day: d.getDate(),
-		// 	enableUtc: false
-		// });
-
 		// Set the date we're counting down to
 		var countDownDate = new Date("{{ $akad_nikah->tanggal }}").getTime();
 
@@ -552,7 +507,7 @@
 		// If the count down is over, write some text 
 		if (distance < 0) {
 			clearInterval(x);
-			document.getElementById("tanggal-countdown").innerHTML = "EXPIRED";
+			document.getElementById("tanggal-countdown").innerHTML = "Pernikahan sudah berlangsung";
 		}
 		}, 1000);
 
@@ -622,7 +577,41 @@
 		var dayNameResepsi = daysResepsi[dResepsi.getDay()];
 
 		document.getElementById("hari4").innerHTML = dayNameResepsi;
-	</script>
+
+		</script>
+
+		<script>
+			// btn upload image
+			$('#chooseFile').bind('change', function () {
+				var filename = $("#chooseFile").val();
+				if (/^\s*$/.test(filename)) {
+					$(".file-upload").removeClass('active');
+					$("#noFile").text("No file chosen..."); 
+				}
+				else {
+					$(".file-upload").addClass('active');
+					$("#noFile").text(filename.replace("C:\\fakepath\\", "")); 
+				}
+			});
+		</script>
+
+		<script>
+			function togglePlay(video) {
+			var audio = document.getElementsByTagName("audio")[0];
+			if (audio) {
+				if (audio.paused) {
+					audio.play();
+					document.getElementById("button").src = "https://image.flaticon.com/icons/svg/149/149658.svg";
+				} else {
+					audio.pause();
+					document.getElementById("button").src = "https://image.flaticon.com/icons/svg/149/149657.svg";
+				}
+			}
+			}
+		</script>
+
+		<!-- JS Fancybox -->
+		<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
 
 	</body>
 </html>
