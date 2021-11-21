@@ -301,24 +301,41 @@
 				<div class="row">
 					<div class="col-md-12 animate-box">
 						<div class="wrap-testimony">
+							@if(Session::has('success'))
+								<div class="alert alert-success alert-dismissible show fade">
+									<div class="alert-body">
+									<button class="close" data-dismiss="alert">
+										<span>&times;</span>
+									</button>
+									{{ Session('success') }}
+									</div>
+								</div>
+							@endif
 							<div class="owl-carousel-fullwidth">
+								@foreach ($ucapan as $result)
 								<div class="item">
 									<div class="testimony-slide active text-center">
 										<figure>
-											<img src="{{ asset('frontend/images/couple-1.jpg') }}" alt="user">
+											
+											@if (asset($result->gambar) == null)
+												<img src="{{ asset('frontend/images/couple-2.jpg') }}" alt="user">											
+												@else
+												<img src="{{ asset($result->gambar) }}" alt="user">
+											@endif
 										</figure>
-										<span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
+										<span>{{ $result->nama }} - <a class="twitter">{{ $result->alamat }}</a></span>
 										<blockquote>
-											<p>"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics"</p>
+											<p>"{{ $result->ucapan }}"</p>
 										</blockquote>
 									</div>
 								</div>
+								@endforeach
 								<div class="item">
 									<div class="testimony-slide active text-center">
 										<figure>
 											<img src="{{ asset('frontend/images/couple-2.jpg') }}" alt="user">
 										</figure>
-										<span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
+										<span>John Doe - <a href="#" class="twitter">Bandung</a></span>
 										<blockquote>
 											<p>"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, at the coast of the Semantics, a large language ocean."</p>
 										</blockquote>
@@ -329,7 +346,7 @@
 										<figure>
 											<img src="{{ asset('frontend/images/couple-3.jpg') }}" alt="user">
 										</figure>
-										<span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
+										<span>John Doe - <a href="#" class="twitter">Jakarta</a></span>
 										<blockquote>
 											<p>"Far far away, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean."</p>
 										</blockquote>
@@ -353,9 +370,11 @@
 					<p>Tuliskan sesuatu ucapan berupa harapan ataupun doa untuk kedua mempelai.</p>
 				</div>
 			</div>
+
 			<div class="row animate-box">
 				<div class="col-md-10 col-md-offset-1">
-					<form action="" method="" autocomplete="off" class="form wow fadeIn"> 
+    				<form action="{{ route('ucapan.store') }}" method="POST" enctype="multipart/form-data" autocomplete="off" class="form wow fadeIn">
+					@csrf 
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
@@ -371,7 +390,7 @@
 					
 							<div class="col-md-12">
 								<div class="form-group">
-									<textarea id="doa" name="doa" class="form-control"  cols="30" rows="10"  placeholder="Tuliskan ucapan atau doa untuk kedua mempelai" required="required"></textarea>
+									<textarea id="ucapan" name="ucapan" class="form-control"  cols="30" rows="10"  placeholder="Tuliskan ucapan atau doa untuk kedua mempelai" required="required"></textarea>
 								</div>
 							</div>
 							<div class="col-md-6">
@@ -381,7 +400,7 @@
 										<div class="file-select">
 											<div class="file-select-button" id="fileName">Choose File</div>
 											<div class="file-select-name" id="noFile">No file chosen...</div> 
-											<input type="file" name="chooseFile" id="chooseFile">
+											<input type="file" name="gambar" id="chooseFile">
 										</div>
 									</div>
 									
@@ -512,10 +531,6 @@
 		}
 		}, 1000);
 
-
-
-
-
 		// convert date
 		// akad nikah
 		Date.prototype.toShortFormat = function() {
@@ -613,6 +628,14 @@
 
 		<!-- JS Fancybox -->
 		<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+		
+		<!-- Alert success -->
+    	<script>    
+		$("document").ready(function(){
+			setTimeout(function(){
+			$("div.alert").remove();
+			}, 5000 ); // 5 secs
+		});
 
 	</body>
 </html>

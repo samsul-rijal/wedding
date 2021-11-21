@@ -15,6 +15,10 @@ class CreateUcapanTable extends Migration
     {
         Schema::create('ucapan', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->string('alamat')->nullable();
+            $table->string('ucapan');
+            $table->string('gambar')->nullable();
             $table->timestamps();
         });
     }

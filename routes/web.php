@@ -9,6 +9,7 @@ use App\Http\Controllers\GaleriFotoController;
 use App\Http\Controllers\BackgroundFotoController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UndanganController;
+use App\Http\Controllers\UcapanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,7 @@ use App\Http\Controllers\UndanganController;
 Auth::routes();
 
 Route::get('/', [UndanganController::class, 'index'])->name('undangan');
+Route::resource('ucapan', UndanganController::class);
 
 Route::group(['middleware' => 'auth'], function(){
     Route::get('/admin', function () {
