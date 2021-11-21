@@ -78,7 +78,7 @@
 					<div id="fh5co-logo"><a href="index.html">Wedding<strong>.</strong></a></div>
 				</div>
 				<div class="col-xs-10 text-right menu-1">
-					<ul>
+					<!-- <ul>
 						<li class="active"><a href="index.html">Home</a></li>
 						<li><a href="about.html">Story</a></li>
 						<li class="has-dropdown">
@@ -100,14 +100,14 @@
 							</ul>
 						</li>
 						<li><a href="contact.html">Contact</a></li>
-					</ul>
+					</ul> -->
 				</div>
 			</div>
 			
 		</div>
 	</nav>
 	<!-- Background awal depan -->
-	<header id="fh5co-header" class="fh5co-cover sam" role="banner" style="background-image:url({{ asset('frontend/images/img_bg_2.jpg') }} );" data-stellar-background-ratio="0.5">
+	<header id="fh5co-header" class="fh5co-cover sam" role="banner" style="background-image:url({{ asset($background_foto->gambar) }} );" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -180,7 +180,7 @@
 		</div>
 	</div>
 
-	<div id="fh5co-event" class="fh5co-bg" style="background-image:url(images/img_bg_3.jpg);">
+	<div id="fh5co-event" class="fh5co-bg" style="background-image:url({{ asset($background_foto2->gambar) }}); background-position: center; background-attachment: fixed;">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -343,7 +343,8 @@
 		</div>
 	</div>
 
-	<div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
+	<!-- <div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);"> -->
+	<div id="fh5co-started" style="background-image:url(images/img_bg_4.jpg);">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row animate-box">
@@ -375,7 +376,7 @@
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
-									<label for="fileName" class="label" style="color:#fff">Moment dengan mempelai (optional)</label>
+									<label for="fileName" class="label" style="color:#fff">Upload moment dengan mempelai (optional)</label>
 									<div class="file-upload">
 										<div class="file-select">
 											<div class="file-select-button" id="fileName">Choose File</div>
@@ -392,7 +393,7 @@
 								<!-- <input type="submit" id="rsvp-form-submit" class="btn btn-lg btn-primary" value="Kirim doa dan Ucapan"> -->
 							</div>
               			</div>
-            		</form> 
+            		</form>
 				</div>
 			</div>
 		</div>
@@ -590,7 +591,7 @@
 				}
 				else {
 					$(".file-upload").addClass('active');
-					$("#noFile").text(filename.replace("C:\\fakepath\\", "")); 
+					$("#noFile").text(filename.replace("C:\\fakepath\\", "").substring(0,30) + '...'); 
 				}
 			});
 		</script>

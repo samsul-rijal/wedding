@@ -44,30 +44,6 @@
                 <label>Waktu Selesai</label>
                 <input type="time" class="form-control" name="jam_selesai">
             </div>
-
-            <!-- <div class="form-group ml-1 mr-3">
-                <label>Waktu Mulai</label>
-                <div class="input-group">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                    <i class="fas fa-clock"></i>
-                    </div>
-                </div>
-                <input type="text" class="form-control timepicker" name="jam_mulai">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label>Waktu Selesai</label>
-                <div class="input-group">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                    <i class="fas fa-clock"></i>
-                    </div>
-                </div>
-                <input type="text" class="form-control timepicker" name="jam_selesai">
-                </div>
-            </div> -->
         </div>
 
         <div class="form-group col-md-6">

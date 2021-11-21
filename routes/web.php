@@ -6,6 +6,7 @@ use App\Http\Controllers\MempelaiWanitaController;
 use App\Http\Controllers\AkadNikahController;
 use App\Http\Controllers\ResepsiController;
 use App\Http\Controllers\GaleriFotoController;
+use App\Http\Controllers\BackgroundFotoController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UndanganController;
 
@@ -40,5 +41,6 @@ Route::group(['middleware' => 'auth'], function(){
     Route::resource('akad-nikah', AkadNikahController::class);
     Route::resource('resepsi', ResepsiController::class);
     Route::resource('galeri-foto', GAleriFotoController::class);
+    Route::resource('background-foto', BackgroundFotoController::class);
     Route::resource('user', UserController::class);
 });

@@ -1908,7 +1908,7 @@ form label {
     display: block;
     text-align: center;
     font-family: Helvetica, Arial, sans-serif;
-    font-size: 12px;
+    font-size: 10px;
 }
 .file-upload .file-select {
     display: block;
@@ -1918,7 +1918,8 @@ form label {
     height: 40px;
     line-height: 40px;
     text-align: left;
-    background: #ffffff;
+    /* background: #ccc; */
+    background: rgba(173, 173, 173, 0.5);
     overflow: hidden;
     position: relative;
 }
