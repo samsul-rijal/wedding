@@ -6,11 +6,11 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Wedding &mdash; Samsul Rijal</title>
+	<title>Wedding &mdash; {{ $mempelai_pria->nama_panggilan }} & {{ $mempelai_wanita->nama_panggilan }} </title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Web Undangan Nikah Samsul Rijal" />
-	<meta name="keywords" content="Web Undangan Nikah Samsul Rijal" />
-	<meta name="author" content="Samsul Rijal" />
+	<meta name="description" content="Web Undangan Nikah {{ $mempelai_pria->nama_panggilan }} & {{ $mempelai_wanita->nama_panggilan }}" />
+	<meta name="keywords" content="Web Undangan Nikah {{ $mempelai_pria->nama_panggilan }} & {{ $mempelai_wanita->nama_panggilan }}" />
+	<meta name="author" content="{{ $mempelai_pria->nama_panggilan }} & {{ $mempelai_wanita->nama_panggilan }}" />
 
   	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>
@@ -38,6 +38,9 @@
 
 	<!-- Bootstrap  -->
 	<link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.css') }}">
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 	<!-- Magnific Popup -->
     <link rel="stylesheet" href="{{ asset('frontend/css/magnific-popup.css') }}">
@@ -75,32 +78,22 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-2">
-					<div id="fh5co-logo"><a href="index.html">Wedding<strong>.</strong></a></div>
+					<div id="fh5co-logo"><a href="/">Wedding<strong>.</strong></a></div>
 				</div>
+				<div class="col-xs-2">
+					<audio id="track">
+						<source src="{{ asset($musik->audio) }}" type="audio/mpeg" />
+					</audio>
+
+					<div id="player-container">
+						<div id="play-pause" class="play"></div>
+					</div>
+				</div>
+				
 				<div class="col-xs-10 text-right menu-1">
-					<!-- <ul>
-						<li class="active"><a href="index.html">Home</a></li>
-						<li><a href="about.html">Story</a></li>
-						<li class="has-dropdown">
-							<a href="services.html">Services</a>
-							<ul class="dropdown">
-								<li><a href="#">Web Design</a></li>
-								<li><a href="#">eCommerce</a></li>
-								<li><a href="#">Branding</a></li>
-								<li><a href="#">API</a></li>
-							</ul>
-						</li>
-						<li class="has-dropdown">
-							<a href="gallery.html">Gallery</a>
-							<ul class="dropdown">
-								<li><a href="#">HTML5</a></li>
-								<li><a href="#">CSS3</a></li>
-								<li><a href="#">Sass</a></li>
-								<li><a href="#">jQuery</a></li>
-							</ul>
-						</li>
-						<li><a href="contact.html">Contact</a></li>
-					</ul> -->
+					<ul>
+						<li class="active"><a href="/">Home</a></li>
+					</ul>
 				</div>
 			</div>
 			
@@ -115,7 +108,6 @@
 				<div class="text-center">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-						
 							<h1>{{ $mempelai_pria->nama_panggilan }} &amp; {{ $mempelai_wanita->nama_panggilan }}</h1>
 							<h2>
 								Akan segera melangsungkan pernikahan
@@ -125,14 +117,14 @@
 								</p>
 							</h2>
 							<div class="simply-countdown simply-countdown-one" id="tanggal-countdown" style="font-size:15px; color: #fff "></div>
-							<!-- <p><a href="#couple" class="btn btn-sm">Save the date</a></p> -->
+							<!-- <p><a href="#couple" class="btn btn-sm" id="play-pause">Save the date</a> -->
+						</p>
 							<div class="scroll-down d-flex justify-content-center">
 								<div class="chevron"></div>
 								<div class="chevron"></div>
 								<div class="chevron"></div>
 								<span class="text d-flex justify-content-center">Scroll down</span>
 							</div>
-							<!-- <div class="icon-scroll"></div> -->
 						</div>
 					</div>
 				</div>
@@ -180,7 +172,7 @@
 		</div>
 	</div>
 
-	<div id="fh5co-event" class="fh5co-bg" style="background-image:url({{ asset($background_foto2->gambar) }}); background-position: center; background-attachment: fixed;">
+	<div id="fh5co-event" class="fh5co-bg bg-sam" style="background-image:url({{ asset($background_foto2->gambar) }}); background-position: center;">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -317,10 +309,10 @@
 									<div class="testimony-slide active text-center">
 										<figure>
 											
-											@if (asset($result->gambar) == null)
-												<img src="{{ asset('frontend/images/couple-2.jpg') }}" alt="user">											
-												@else
+											@if (isset($result->gambar))
 												<img src="{{ asset($result->gambar) }}" alt="user">
+											@else
+												<img src="{{ asset('frontend/images/user.png') }}" alt="user">											
 											@endif
 										</figure>
 										<span>{{ $result->nama }} - <a class="twitter">{{ $result->alamat }}</a></span>
@@ -425,13 +417,13 @@
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box" style="margin-bottom:20px;">
 					<br><h2>Peta Lokasi</h2><span id="maps"></span>
 					<p>Anda dapat menuju lokasi acara kami dengan bantuan peta dibawah ini. Atau anda bisa buka di <strong>
-                    <br><br><a href="https://goo.gl/maps/1g9Y79f1tQrcQBFT8" target="_blank" class="btn btn-primary">Buka di Google Maps</a></strong></p>
+                    <br><br><a href="https://goo.gl/maps/Wza3dJrfeUjoaXkYA" target="_blank" class="btn btn-primary">Buka di Google Maps</a></strong></p>
 				</div>
 			
 				<div class="col-md-12 text-center">
 					<div id="map" class="mapbox">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7929.9350883672905!2d106.137132!3d-6.398184!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x26de9a5bfb2c4f8c!2sEndi%20Studio!5e0!3m2!1sen!2sid!4v1636486321961!5m2!1sen!2sid" width="330" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>	
-					</div><br><br>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126214.34777324561!2d115.1419648246618!3d-8.672676918416109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd246bc2ab70d43%3A0x82feaae12f4ab48e!2sKuta%20Beach!5e0!3m2!1sen!2sid!4v1637494679025!5m2!1sen!2sid" width="330" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+						</div><br><br>
 				</div>
 			</div>
 		</div>
@@ -636,6 +628,32 @@
 			$("div.alert").remove();
 			}, 5000 ); // 5 secs
 		});
+		</script>
+
+		<!-- Music -->
+		<script>
+			var track = document.getElementById('track');
+
+			var controlBtn = document.getElementById('play-pause');
+
+			function playPause() {
+				if (track.paused) {
+					track.play();
+					//controlBtn.textContent = "Pause";
+					controlBtn.className = "pause";
+				} else { 
+					track.pause();
+					//controlBtn.textContent = "Play";
+					controlBtn.className = "play";
+				}
+			}
+
+			controlBtn.addEventListener("click", playPause);
+			track.addEventListener("ended", function() {
+			controlBtn.className = "play";
+			});
+
+		</script>
 
 	</body>
 </html>
