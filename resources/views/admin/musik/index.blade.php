@@ -22,12 +22,21 @@
     @endif
 
     <div class="card">
-      <div class="row p-3">
+      <div class="row p-1">
         @foreach ($musik as $result)
-            <p>{{ $result->judul }}</p>
-            <audio controls>
-				<source src="{{ asset($result->audio) }}" type="audio/mpeg" />
-		    </audio>
+
+
+          <div class="col-12 col-md-4 col-lg-4">
+              <div class="mb-5 text-center">
+                
+                  <p>{{ $result->judul }}</p>
+                  <audio controls>
+                    <source src="{{ asset($result->audio) }}" type="audio/mpeg" />
+                  </audio>
+          
+              </div>
+              <a href="{{ route('musik.edit', $result->id) }}" class="btn btn-warning btn-block">Update Musik</a>
+          </div>
         @endforeach
       </div>
     </div>

@@ -1,4 +1,9 @@
 @extends('template_backend.home')
+
+@section('galeri_foto')    
+  <li class="active"><a class="nav-link" href="{{ route('galeri-foto.index') }}"><i class="fas fa-camera"></i> <span>Galeri Foto</span></a></li>
+@endsection
+
 @section('sub-judul','Galeri Foto')
 @section('content')
 

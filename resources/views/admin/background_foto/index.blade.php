@@ -1,5 +1,5 @@
 @extends('template_backend.home')
-@section('sub-judul','Background Foto')
+@section('sub-judul','Background Gambar')
 @section('content')
 
   <div class="section-body">

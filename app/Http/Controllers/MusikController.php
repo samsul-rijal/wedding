@@ -46,12 +46,34 @@ class MusikController extends Controller
 
     public function edit($id)
     {
-        //
+        $musik = Musik::findorfail($id);
+        return view('admin.musik.edit', compact('musik'));
     }
 
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'judul' => '',
+        ]);
+
+        if($request->has('audio')) {
+            $audio = $request->audio;
+            $new_audio = time().$audio->getClientOriginalName();
+            $audio->move('uploads/musik', $new_audio);
+
+            $musik_data = [
+                'judul' => $request->judul,
+                'audio' => 'uploads/musik/'.$new_audio
+            ];
+        } else {
+            $musik_data = [
+                'judul' => $request->judul,
+            ]; 
+        }
+
+        Musik::whereId($id)->update($musik_data);
+
+        return redirect()->route('musik.index')->with('success','Musik berhasil diupdate');
     }
 
     public function destroy($id)

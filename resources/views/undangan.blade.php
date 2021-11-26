@@ -89,7 +89,6 @@
 						<div id="play-pause" class="play"></div>
 					</div>
 				</div>
-				
 				<div class="col-xs-10 text-right menu-1">
 					<ul>
 						<li class="active"><a href="/">Home</a></li>
@@ -387,7 +386,7 @@
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
-									<label for="fileName" class="label" style="color:#fff">Upload moment dengan mempelai (optional)</label>
+									<label for="fileName" class="label" style="color:#fff">Upload Gambar (optional)</label>
 									<div class="file-upload">
 										<div class="file-select">
 											<div class="file-select-button" id="fileName">Choose File</div>
@@ -401,7 +400,6 @@
 							
 							<div class="col-md-12 text-center mt-4">
 								<button class="btn btn-md btn-primary">Kirim doa dan Ucapan</button>
-								<!-- <input type="submit" id="rsvp-form-submit" class="btn btn-lg btn-primary" value="Kirim doa dan Ucapan"> -->
 							</div>
               			</div>
             		</form>

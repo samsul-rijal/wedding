@@ -43,12 +43,29 @@ class BackgroundFotoController extends Controller
 
     public function edit($id)
     {
-        //
+        $background_foto = BackgroundFoto::findorfail($id);
+        return view('admin.background_foto.edit', compact('background_foto'));
     }
 
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'gambar' => '',
+        ]);
+
+        if($request->has('gambar')) {
+            $gambar = $request->gambar;
+            $new_gambar = time().$gambar->getClientOriginalName();
+            $gambar->move('uploads/background_foto', $new_gambar);
+
+            $background_foto_data = [
+                'gambar' => 'uploads/background_foto/'.$new_gambar
+            ];
+        }
+
+        BackgroundFoto::whereId($id)->update($background_foto_data);
+
+        return redirect()->route('background-foto.index')->with('success','Gambar berhasil diupdate');
     }
 
     public function destroy($id)
