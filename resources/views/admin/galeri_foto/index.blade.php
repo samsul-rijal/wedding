@@ -1,16 +1,11 @@
 @extends('template_backend.home')
-
-@section('galeri_foto')    
-  <li class="active"><a class="nav-link" href="{{ route('galeri-foto.index') }}"><i class="fas fa-camera"></i> <span>Galeri Foto</span></a></li>
-@endsection
-
 @section('sub-judul','Galeri Foto')
 @section('content')
 
   <div class="section-body">
     @if(count($galeri_foto)<=8)
       <div>
-        <a href="{{ route('galeri-foto.create') }}" class="btn btn-info btn-sm">Tambah Foto</a>
+        <a href="{{ route('galeri-foto.create') }}" class="btn btn-info btn-sm">Tambah Gambar</a>
       </div>
       <br>
     @endif
@@ -41,7 +36,7 @@
                   <h2><a href="#">{{ $result->keterangan }}</a></h2>
                 </div>
               </div>
-              <a href="{{ route('galeri-foto.edit', $result->id) }}" class="btn btn-warning btn-block">Update Data</a>
+              <a href="{{ route('galeri-foto.edit', $result->id) }}" class="btn btn-warning btn-block">Ubah Gambar</a>
             </article>
           </div>
         @endforeach

@@ -24,9 +24,7 @@
     <div class="card">
       <div class="row p-1">
         @foreach ($musik as $result)
-
-
-          <div class="col-12 col-md-4 col-lg-4">
+          <div class="col-12 col-md-4 col-lg-4 mb-2">
               <div class="mb-5 text-center">
                 
                   <p>{{ $result->judul }}</p>
@@ -35,7 +33,7 @@
                   </audio>
           
               </div>
-              <a href="{{ route('musik.edit', $result->id) }}" class="btn btn-warning btn-block">Update Musik</a>
+              <a href="{{ route('musik.edit', $result->id) }}" class="btn btn-warning btn-block">Ubah Musik</a>
           </div>
         @endforeach
       </div>

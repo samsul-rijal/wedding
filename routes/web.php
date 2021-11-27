@@ -11,6 +11,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\UndanganController;
 use App\Http\Controllers\UcapanController;
 use App\Http\Controllers\MusikController;
+use App\Http\Controllers\MapsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,5 +47,6 @@ Route::group(['middleware' => 'auth'], function(){
     Route::resource('galeri-foto', GAleriFotoController::class);
     Route::resource('background-foto', BackgroundFotoController::class);
     Route::resource('musik', MusikController::class);
+    Route::resource('maps', MapsController::class);
     Route::resource('user', UserController::class);
 });

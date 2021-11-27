@@ -5,7 +5,7 @@
   <div class="section-body">
     @if(count($background_foto)<=8)
       <div>
-        <a href="{{ route('background-foto.create') }}" class="btn btn-info btn-sm">Tambah Background Foto</a>
+        <a href="{{ route('background-foto.create') }}" class="btn btn-info btn-sm">Tambah Background Gambar</a>
       </div>
       <br>
     @endif
@@ -31,7 +31,7 @@
                   <img src="{{ asset($result->gambar) }}" class="article-image" width="500" height="800">
                 </div>
               </div>
-              <a href="{{ route('background-foto.edit', $result->id) }}" class="btn btn-warning btn-block">Update Data</a>
+              <a href="{{ route('background-foto.edit', $result->id) }}" class="btn btn-warning btn-block">Ubah Gambar</a>
             </article>
           </div>
         @endforeach

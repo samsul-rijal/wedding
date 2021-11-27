@@ -28,7 +28,7 @@
         
         <li class="{{ (request()->is('galeri-foto*')) ? 'active' : '' }}"><a class="nav-link" href="{{ route('galeri-foto.index') }}"><i class="fas fa-camera"></i> <span>Galeri Foto</span></a></li>
         <li class="{{ (request()->is('background-foto*')) ? 'active' : '' }}"><a class="nav-link" href="{{ route('background-foto.index') }}"><i class="fas fa-image"></i> <span>Background Gambar</span></a></li>
-        <li><a class="nav-link" href="{{ route('background-foto.index') }}"><i class="fas fa-map-marker-alt"></i> <span>Maps</span></a></li>
+        <li class="{{ (request()->is('maps*')) ? 'active' : '' }}"><a class="nav-link" href="{{ route('maps.index') }}"><i class="fas fa-map-marker-alt"></i> <span>Maps</span></a></li>
         <li class="{{ (request()->is('musik*')) ? 'active' : '' }}"><a class="nav-link" href="{{ route('musik.index') }}"><i class="fas fa-music"></i> <span>Musik</span></a></li>
         <li><a class="nav-link" href="blank.html"><i class="fas fa-video"></i> <span>Video</span></a></li>
         <li><a class="nav-link" href="blank.html"><i class="fas fa-cogs"></i> <span>Pengaturan Umum</span></a></li>

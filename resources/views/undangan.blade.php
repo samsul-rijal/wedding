@@ -263,20 +263,18 @@
 			
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Video Galeri</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+					<h2>Video Prewedding</h2>
 				</div>
 			</div>
 
 			<div class="row">
-				<div class="col-md-12 animate-box">
+				<div class="col-md-12 animate-box text-center">
 					<div class="fh5co-video fh5co-bg" style="background-image: url(images/img_bg_3.jpg); ">
 						<a href="https://youtu.be/_aI9zLLKf_U" class="popup-vimeo"><i class="icon-video2"></i></a>
 						<div class="overlay"></div>
 					</div>
+					<iframe width="330" height="330" src="https://www.youtube.com/embed/_aI9zLLKf_U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/_aI9zLLKf_U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/_aI9zLLKf_U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
 		</div>
 	</div> -->
@@ -412,16 +410,23 @@
 	<div id="mapss" class="fh5co-section-gray">
 		<div class="container">
 			<div class="row"> 
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box" style="margin-bottom:20px;">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box" data-animate-effect="fadeIn" style="margin-bottom:20px;">
 					<br><h2>Peta Lokasi</h2><span id="maps"></span>
 					<p>Anda dapat menuju lokasi acara kami dengan bantuan peta dibawah ini. Atau anda bisa buka di <strong>
-                    <br><br><a href="https://goo.gl/maps/Wza3dJrfeUjoaXkYA" target="_blank" class="btn btn-primary">Buka di Google Maps</a></strong></p>
+                    <br><br><a href="{{ $maps->url }}" target="_blank" class="btn btn-primary">Buka di Google Maps</a></strong></p>
 				</div>
 			
 				<div class="col-md-12 text-center">
 					<div id="map" class="mapbox">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126214.34777324561!2d115.1419648246618!3d-8.672676918416109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd246bc2ab70d43%3A0x82feaae12f4ab48e!2sKuta%20Beach!5e0!3m2!1sen!2sid!4v1637494679025!5m2!1sen!2sid" width="330" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-						</div><br><br>
+						<iframe 
+							src="{{ $maps->embed }}" 
+							width="330" 
+							height="250" 
+							style="border:0;" 
+							allowfullscreen="" 
+							loading="lazy">
+						</iframe>
+					</div><br><br>
 				</div>
 			</div>
 		</div>

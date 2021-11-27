@@ -1,5 +1,5 @@
 @extends('template_backend.home')
-@section('sub-judul','Update Galeri Foto')
+@section('sub-judul','Ubah Galeri Foto')
 @section('content')
 
     @if(count($errors)>0)
@@ -16,10 +16,6 @@
     @endif
 
     @if(Session::has('success'))
-        <!-- <div class="alert alert-success" role="alert">
-            {{ Session('success') }}
-        </div> -->
-
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
             {{ Session('success') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -40,7 +36,7 @@
         </div>
 
         <div class="form-group">
-            <button class="btn btn-primary btn-block">Update Data</button>
+            <button class="btn btn-primary btn-block">Ubah Gambar</button>
         </div>
     </form>
 

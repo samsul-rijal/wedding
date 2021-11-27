@@ -1,5 +1,5 @@
 @extends('template_backend.home')
-@section('sub-judul','Update Musik')
+@section('sub-judul','Ubah Musik')
 @section('content')
 
     @if(count($errors)>0)
@@ -36,7 +36,7 @@
         </div>
 
         <div class="form-group">
-            <button class="btn btn-primary btn-block">Update Musik</button>
+            <button class="btn btn-primary btn-block">Ubah Musik</button>
         </div>
     </form>
 

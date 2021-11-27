@@ -62,7 +62,7 @@
                 </tr>
               </table>
             </div>
-            <a href="{{ route('resepsi.edit', $result->id) }}" class="btn btn-warning btn-block">Update Data</a>
+            <a href="{{ route('resepsi.edit', $result->id) }}" class="btn btn-warning btn-block">Ubah Data</a>
             <!-- <div class="mt-2">
               <form action="{{ route('resepsi.destroy', $result->id) }}" method="POST">
                 @csrf

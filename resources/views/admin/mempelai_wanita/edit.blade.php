@@ -1,5 +1,5 @@
 @extends('template_backend.home')
-@section('sub-judul','Edit Data Mempelai Wanita')
+@section('sub-judul','Ubah Data Mempelai Wanita')
 @section('content')
 
     @if(count($errors)>0)
@@ -70,7 +70,7 @@
         </div>
 
         <div class="form-group">
-            <button class="btn btn-primary btn-block">Update Data</button>
+            <button class="btn btn-primary btn-block">Ubah Data</button>
         </div>
     </form>
 

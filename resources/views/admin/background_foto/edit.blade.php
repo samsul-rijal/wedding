@@ -1,5 +1,5 @@
 @extends('template_backend.home')
-@section('sub-judul','Update Galeri Foto')
+@section('sub-judul','Ubah Background Foto')
 @section('content')
 
     @if(count($errors)>0)
@@ -27,12 +27,12 @@
         @method('patch')
 
         <div class="form-group">
-            <label>Update Gambar</label>
+            <label>Ubah Gambar</label>
             <input type="file" class="form-control" name="gambar">
         </div>
 
         <div class="form-group">
-            <button class="btn btn-primary btn-block">Update Gambar</button>
+            <button class="btn btn-primary btn-block">Ubah Gambar</button>
         </div>
     </form>
 

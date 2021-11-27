@@ -34,7 +34,7 @@ class ResepsiController extends Controller
             'tempat' => $request->tempat,
         ]);
 
-        return redirect()->route('resepsi.index')->with('success','Data berhasil diupdate');
+        return redirect()->route('resepsi.index')->with('success','Resepsi berhasil disimpan');
     }
 
     public function show($id)
@@ -67,7 +67,7 @@ class ResepsiController extends Controller
         ];
 
         Resepsi::whereId($id)->update($resepsi_data);
-        return redirect()->route('resepsi.index')->with('success','Data berhasil diupdate');
+        return redirect()->route('resepsi.index')->with('success','Resepsi berhasil diubah');
     
     }
 

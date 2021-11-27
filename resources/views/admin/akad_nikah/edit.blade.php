@@ -1,5 +1,5 @@
 @extends('template_backend.home')
-@section('sub-judul','Buat Akad Nikah')
+@section('sub-judul','Ubah Akad Nikah')
 @section('content')
 
     @if(count($errors)>0)
@@ -50,7 +50,7 @@
         </div>
 
         <div class="form-group">
-            <button class="btn btn-primary btn-block">Simpan</button>
+            <button class="btn btn-primary btn-block">Ubah Akad</button>
         </div>
     </form>
 

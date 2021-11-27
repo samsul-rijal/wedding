@@ -11,6 +11,7 @@ use App\Models\GaleriFoto;
 use App\Models\BackgroundFoto;
 use App\Models\Ucapan;
 use App\Models\Musik;
+use App\Models\Maps;
 
 class UndanganController extends Controller
 {
@@ -25,7 +26,8 @@ class UndanganController extends Controller
         $background_foto2 = BackgroundFoto::find(2);
         $ucapan = Ucapan::all();
         $musik = Musik::find(1);
-        return view('undangan', compact('mempelai_pria', 'mempelai_wanita','akad_nikah','resepsi','galeri_foto','background_foto','background_foto2','ucapan','musik'));
+        $maps = Maps::find(1);
+        return view('undangan', compact('mempelai_pria', 'mempelai_wanita','akad_nikah','resepsi','galeri_foto','background_foto','background_foto2','ucapan','musik','maps'));
     }
 
 
