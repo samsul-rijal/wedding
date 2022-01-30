@@ -2,9 +2,9 @@
         <div class="footer-left">
           Copyright &copy; 2021 <div class="bullet"></div> <a href="#">Samsul Rijal</a>
         </div>
-        <div class="footer-right">
+        <!-- <div class="footer-right">
           2.3.0
-        </div>
+        </div> -->
       </footer>
     </div>
   </div>

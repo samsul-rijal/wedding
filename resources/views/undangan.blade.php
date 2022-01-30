@@ -18,9 +18,9 @@
 	<meta property="og:url" content=""/>
 	<meta property="og:site_name" content=""/>
 	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
+	<meta name="twitter:title" content="Samsul Rijal" />
 	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
+	<meta name="twitter:url" content="https://twitter.com/samsul_r" />
 	<meta name="twitter:card" content="" />
 
 	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
@@ -309,7 +309,7 @@
 											@if (isset($result->gambar))
 												<img src="{{ asset($result->gambar) }}" alt="user">
 											@else
-												<img src="{{ asset('frontend/images/user.png') }}" alt="user">											
+												<img src="{{ asset('frontend/images/user.jpg') }}" alt="user">											
 											@endif
 										</figure>
 										<span>{{ $result->nama }} - <a class="twitter">{{ $result->alamat }}</a></span>

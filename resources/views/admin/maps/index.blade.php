@@ -24,26 +24,25 @@
     <div class="card">
       <div class="row p-3">
         @foreach ($maps as $result)
-            <div class="col-12 col-md-8">
-			    <h2>Peta Lokasi</h2>
-				<p>Anda dapat melihat lokasi dengan bantuan peta dibawah ini. Atau anda bisa buka di <strong>
-                <a href="{{ $result->url }}" target="_blank" class="btn btn-primary">Buka di Google Maps</a></strong></p>
-			</div>
-			
-            <div class="col-md-8">
-                <div class="col-md-8">
-                    <iframe
-                        width="410"
-                        height="300"
-                        style="border:0"
-                        loading="lazy"
-                        allowfullscreen
-                        src="{{ $result->embed }}">
-                    </iframe>
-                    <a href="{{ route('maps.edit', $result->id) }}" class="btn btn-warning btn-block">Ubah Maps</a>
-
-                </div>
-            </div>
+          <div class="col-12 col-md-8">
+            <h2>Peta Lokasi</h2>
+            <p>Anda dapat melihat lokasi dengan bantuan peta dibawah ini. Atau anda bisa<strong><br>
+            <a href="{{ $result->url }}" target="_blank" class="btn btn-primary">Buka di Google Maps</a></strong></p>
+          </div>
+          
+          <div class="col-md-12">
+              <iframe
+                  width="270"
+                  height="265"
+                  style="border:0"
+                  loading="lazy"
+                  allowfullscreen
+                  src="{{ $result->embed }}">
+              </iframe>
+              <div class="col-md-3 text-center">
+                <a href="{{ route('maps.edit', $result->id) }}" class="btn btn-warning btn-block">Ubah Maps</a>
+              </div>
+          </div>
             
         @endforeach
       </div>
